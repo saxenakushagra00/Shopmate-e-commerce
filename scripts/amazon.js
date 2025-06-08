@@ -75,7 +75,13 @@ cart.push({
 });
 }
 
+let cartquantity=0;
 
-console.log(cart);
+cart.forEach((item)=>{
+cartquantity+=item.quantity
+document.querySelector('.jscartquantity').innerHTML=cartquantity;
+})
+
+
 });
 });
