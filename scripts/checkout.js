@@ -15,7 +15,7 @@ if(product.id==productId){
 });
 
 
-cartsummaryhtml +=`<div class="cart-item-container">
+cartsummaryhtml +=`<div class="cart-item-container jscartitemcontainer-${matchingproduct.id}">
     <div class="delivery-date">
       Delivery date: Tuesday, June 21
     </div>
@@ -91,10 +91,16 @@ cartsummaryhtml +=`<div class="cart-item-container">
     </div>
   </div>`;
 });
-document.querySelector('.jsordersummary').innerHTML=cartsummaryhtml;
+document.querySelector('.order-summary').innerHTML=cartsummaryhtml;
 document.querySelectorAll('.jsdeletebutton').forEach((link)=>{
 link.addEventListener('click',()=>{
-const productId=link.dataset.productId;
+const productId=link.dataset.productid;
 removefromcart(productId);
+
+const container=document.querySelector(`.jscartitemcontainer-${productId}`);
+if(container){
+  container.remove();
+}
+
 });
 });
