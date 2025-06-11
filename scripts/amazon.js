@@ -49,7 +49,7 @@ productshtml=productshtml+`
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary jsaddtocart data-product-id="${product.id}">
+          <button class="add-to-cart-button button-primary jsaddtocart" data-product-id="${product.id}">
             Add to Cart
           </button>
         </div>
@@ -61,7 +61,7 @@ productshtml=productshtml+`
 function updatecartquantity(){
   let cartquantity=0;
 cart.forEach((cartitem)=>{
-cartquantity+=cartitem.quantity});
+cartquantity+=cartitem.quantity;});
 document.querySelector('.jscartquantity').innerHTML=cartquantity;
 }
 
