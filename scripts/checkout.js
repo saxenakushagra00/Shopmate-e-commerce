@@ -1,4 +1,4 @@
-import{cart,removefromcart} from '../data/cart.js';
+import{cart,removefromcart,updatedeliveryoption} from '../data/cart.js';
 import{products} from '../data/products.js';
 import { formatcurrency } from './utils/money.js';
 import{hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
@@ -88,7 +88,8 @@ const pricestring= deliveryoption.priceCents===0
 :`$${formatcurrency(deliveryoption.priceCents)}-`;
 const ischecked=deliveryoption.id===cartitem.deliveryoptionsid;
 html+=
-` <div class="delivery-option">
+` <div class="delivery-option jsdeliveryoption" data-productid="${matchingproduct.id}"
+    data-deliveryoptionid="${deliveryoption.id}"   >
           <input type="radio"
           ${ischecked ? 'checked' : ''}
             class="delivery-option-input"
@@ -116,5 +117,12 @@ if(container){
   container.remove();
 }
 
+});
+});
+
+document.querySelectorAll('.jsdeliveryoption').forEach((element)=>{
+element.addEventListener('click',()=>{
+  const{productid,deliveryoptionid}=element.dataset;
+updatedeliveryoption(productid,deliveryoptionid);
 });
 });

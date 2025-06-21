@@ -27,7 +27,7 @@ productshtml=productshtml+`
             $${formatcurrency(product.priceCents)}
           </div>
 
-          <div class="product-quantity-container">
+          <div class="product-quantity-container">s
             <select>
               <option selected value="1">1</option>
               <option value="2">2</option>
