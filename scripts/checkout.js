@@ -7,13 +7,22 @@ import { loadCart } from '../data/cart.js';
 
 
 async function loadpage(){
+try{
+
+  //throw 'error1';
 
 await loadproductsfetch();
 const value=await new Promise((resolve)=>{
+  //throw 'error2';
 loadCart(()=>{
+  //reject('error3');
   resolve('value3');
 });
   });
+
+}catch(error){
+console.log('Unexpected error. Please try again later.');
+}
 
 
    renderordersummary();

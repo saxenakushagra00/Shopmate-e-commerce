@@ -74,10 +74,13 @@ return new Clothing(productDetails);
 return new Product(productDetails);
 });
 console.log('load prodcuts');
+  }).catch(()=>{
+   console.log('Unexpected error. Please try again later'); 
   });
 
   return promise;
 }
+
 /*
 loadproductsfetch().then(()=>{
   console.log('next step');
@@ -97,11 +100,14 @@ console.log('load prodcuts');
 
 fun();
   });
+
+  xhr.addEventListener('error',(error)=>{
+console.log('Unexpected error. Please try again later');
+  });
   xhr.open('GET','https://supersimplebackend.dev/products');
   xhr.send();
 
 }
-loadproducts();
 /*
 export const products = [
 {
