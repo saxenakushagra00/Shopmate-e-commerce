@@ -1,4 +1,4 @@
-import formatcurrency from '../scripts/utils/money.js';
+import {formatcurrency} from '../scripts/utils/money.js';
 
 export function getproduct(productId){
 let matchingproduct;
@@ -21,6 +21,7 @@ class Product{
     this.image=productDetails.image;
     this.rating=productDetails.rating;
     this.priceCents=productDetails.priceCents;
+    this.name=productDetails.name;
   }
 
   getstarsurl(){
