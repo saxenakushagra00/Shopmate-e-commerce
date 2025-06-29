@@ -5,6 +5,24 @@ import { loadproducts,loadproductsfetch } from '../data/products.js';
 import { loadCart } from '../data/cart.js';
 //import '../data/backend-practice.js';
 
+
+async function loadpage(){
+
+await loadproductsfetch();
+const value=await new Promise((resolve)=>{
+loadCart(()=>{
+  resolve('value3');
+});
+  });
+
+
+   renderordersummary();
+    renderpaymentsummary();
+}
+
+loadpage();
+
+/*
 Promise.all([
 loadproductsfetch(),
 new Promise((resolve)=>{
@@ -17,7 +35,7 @@ loadCart(()=>{
     renderordersummary();
     renderpaymentsummary();
 });
-
+*/
 /*
 new Promise((resolve)=>{
 loadproducts(()=>{
