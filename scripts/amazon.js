@@ -41,7 +41,7 @@ productshtml=productshtml+`
               <option value="10">10</option>
             </select>
           </div>
-
+                ${product.extrainfohtml()}
           <div class="product-spacer"></div>
 
           <div class="added-to-cart">
